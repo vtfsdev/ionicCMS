@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userCreate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input [(ngModel)]="user.email" name="email" type="email"></ion-input>
+      <div *ngIf="errors.email"> {{ errors.email }} </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input [(ngModel)]="user.username" name="username" type="text"></ion-input>
+      <div *ngIf="errors.username"> {{ errors.username }} </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input [(ngModel)]="user.first_name" name="first_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input [(ngModel)]="user.last_name" name="last_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" expand="full" (click)="onSubmit()">Submit</ion-button>
+    <ion-button color="danger" expand="full" [routerLink]="['/users']">Cancel</ion-button>
+  </ion-content> 
