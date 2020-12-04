@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>articleCreate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input [(ngModel)]="article.title" name="title" type="text"></ion-input>
+      <div *ngIf="errors.title"> {{ errors.title }} </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input [(ngModel)]="article.description" name="description" type="text"></ion-input>
+      <div *ngIf="errors.description"> {{ errors.description }} </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Keywords</ion-label>
+      <ion-input [(ngModel)]="article.keywords" name="keywords" type="text"></ion-input>
+      <div *ngIf="errors.keywords"> {{ errors.keywords }} </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Body</ion-label>
+      <ion-input [(ngModel)]="article.body" name="body" type="text"></ion-input>
+      <div *ngIf="errors.body"> {{ errors.body }} </div>
+    </ion-item>
+
+    <ion-button color="primary" expand="full" (click)="onSubmit()">Submit</ion-button>
+    <ion-button color="danger" expand="full" [routerLink]="['/articles']">Cancel</ion-button>
+  </ion-content> 

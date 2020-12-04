@@ -3,26 +3,26 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>user</ion-title>
+    <ion-title>article</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-item *ngIf="!user">
+    <ion-item *ngIf="!article">
         <ion-label ion-text-center>
           <ion-spinner></ion-spinner>
         </ion-label>
       </ion-item>
     
-      <ion-card *ngIf="user">
+      <ion-card *ngIf="article">
     
         <ion-card-header>
-          <ion-card-title>{{ user.first_name }} {{ user.last_name }}</ion-card-title>
+          <ion-card-title>{{ article.title }} </ion-card-title>
         </ion-card-header>
         
         <ion-list>
-          <ion-item>{{ user.username  }}</ion-item>
-          <ion-item>{{ user.email  }}</ion-item>
+          <ion-item>{{ article.description }}</ion-item>
+          <ion-item>{{ article.body }}</ion-item>
         </ion-list>
     
       </ion-card>
@@ -32,13 +32,13 @@
           <ion-icon name="chevron-back"></ion-icon>
         </ion-fab-button>
     
-        <ion-fab-list side="start" *ngIf="user">
+        <ion-fab-list side="start" *ngIf="article">
     
-          <ion-fab-button color="light" [routerLink]="['/user-edit', user._id]">
+          <ion-fab-button color="light" [routerLink]="['/article-edit', article._id]">
             <ion-icon name="create"></ion-icon>
           </ion-fab-button>
     
-          <ion-fab-button color="danger" [routerLink]="['/user-delete', user._id]">
+          <ion-fab-button color="danger" [routerLink]="['/article-delete', article._id]">
             <ion-icon name="trash"></ion-icon>
           </ion-fab-button>
     
